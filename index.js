@@ -48,6 +48,28 @@ app.listen(3000, () => {
 
 //=======================================
 
+
+const {
+  ActivityType,
+} = require("discord.js");
+
+client.once("ready", () => {
+  console.log(`bot is ready! ${client.user.tag}!`);
+
+  const statusType = "idle"; // online = الاخضر | dnd = الاحمر | idle = الاصفر | invisible = غير متصل
+  client.user.setPresence({
+    status: statusType,
+    activities: [
+      {
+        name: "With Your Role", // الاسم
+        type: ActivityType.PLAYING, // النشاط هو مشاهدة
+      },
+    ],
+  });
+});
+/*
+
+
 const {
   ActivityType,
 } = require("discord.js");
@@ -62,14 +84,18 @@ client.once("ready", () => {
     status: statusType,
     activities: [
       {
-        name: "EVO ROLES", // الاسم
-        type: ActivityType.Streaming, // streaming | playing | listening/ watching
+        name: "With Your Role", // الاسم
+        type: ActivityType.PLAYING, // streaming | playing | listening/ watching
         url: "https://www.twitch.tv/evo_bots?&ab_channel=evo_bots", // stream link
       },
     ],
   });
 });
 
+
+
+
+*/
 
 
 //=========================================
